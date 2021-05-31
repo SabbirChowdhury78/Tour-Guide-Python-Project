@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="device_width, initial-scale =1.8">
+    <title>Booking Forms</title>
+</head>
+<body>
+      <form action="" method="post">
+          {{ form.as_p }}
+          {% csrf_token %}
+          <button type="submit">Book Room
+
+          </button>
+
+      </form>
+</body>
+</html>

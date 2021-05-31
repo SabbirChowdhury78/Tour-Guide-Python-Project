@@ -1,0 +1,36 @@
+
+
+{% block content %}
+
+  <h2>Search Form</h2>
+
+  <form method="post" id="searchForm" data-branches-url="{% url 'ajax_load_branches' %}" novalidate>
+    {% csrf_token %}
+    <table>
+      {{ form.as_table }}
+    </table>
+    <button type="submit">Submit</button>
+
+  </form>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+<script>
+    $("#id_division").change(function () {
+      var url = $("#searchForm").attr("data-branches-url");
+      var collegeId = $(this).val();
+
+      $.ajax({
+        url: url,
+        data: {
+          'college': collegeId
+        },
+        success: function (data) {
+          $("#id_district").html(data);
+        }
+      });
+
+    });
+  </script>
+
+
+{% endblock %}

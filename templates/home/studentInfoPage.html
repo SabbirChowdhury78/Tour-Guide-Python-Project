@@ -1,0 +1,23 @@
+
+{% block title %}
+    Student Info
+{% endblock %}
+
+
+{% block content %}
+    <table>
+        <thead>
+
+        </thead>
+        <tbody>
+            {% for student in students %}
+                <tr align="center">
+
+                    {% for s in students %}
+                        <td>{{ s }}</td>
+                    {% endfor %}
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
